@@ -29,7 +29,7 @@ def furthest(num_holes, cafes):
     For each hole in holes,
         if it's a cafe, skip it
         else, count the num of steps it takes to get to a cafe, both left and right
-            take the bigger of the two nums, compare that num to result
+            take the smaller of the two nums, compare that num to result
                 if bigger than result, resassign result
     Return result
     """
@@ -41,21 +41,32 @@ def furthest(num_holes, cafes):
         if hole in cafes:
             continue
 
-        # TODO: "count_steps_left"; "count_steps_right"
-        left = count_steps_left(hole)
-        right = count_steps_right(hole)
-        counter = 0
-        if left > right:
-            counter = left
-        elif right > left:
-            counter = right
-        else:
-            counter = left
+        left = count_steps_left(hole, cafes)
+        right = count_steps_right(hole, cafes)
+        counter = min([x for x in [left, right] if x is not None])
 
         if counter > result:
             result = counter
 
     return result
+
+def count_steps_left(hole, cafes):
+    """Count the steps left to nearest cafe; Return None if no cafe to the left"""
+
+    counter = None
+    for cafe in cafes:
+        if cafe < hole:
+            counter = hole - cafe
+    return counter
+
+def count_steps_right(hole, cafes):
+    """Count the steps right to nearest cafe; Return None if no cafe to the right"""
+
+    for cafe in cafes:
+        if cafe > hole:
+            return cafe - hole
+
+    return None
 
 if __name__ == '__main__':
     import doctest
