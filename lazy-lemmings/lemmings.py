@@ -23,7 +23,7 @@ def furthest(num_holes, cafes):
     """Find longest distance between a hole and a cafe."""
 
     """Pseudocode:
-    Create list based on the num of holes; so range(0, num_holes)
+    Create list based on the num of holes; range(num_holes)
     Assign list to a variable "holes"
     Create varialble "result" set to 0
     For each hole in holes,
@@ -33,6 +33,19 @@ def furthest(num_holes, cafes):
                 if bigger than result, resassign result
     Return result
     """
+
+    holes = range(num_holes)
+    result = 0
+
+    for hole in holes:
+        if hole in cafes:
+            continue
+
+        # TODO: Function for counting
+
+    return result
+
+
 
 if __name__ == '__main__':
     import doctest
