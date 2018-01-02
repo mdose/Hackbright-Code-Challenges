@@ -41,11 +41,21 @@ def furthest(num_holes, cafes):
         if hole in cafes:
             continue
 
-        # TODO: Function for counting
+        # TODO: "count_steps_left"; "count_steps_right"
+        left = count_steps_left(hole)
+        right = count_steps_right(hole)
+        counter = 0
+        if left > right:
+            counter = left
+        elif right > left:
+            counter = right
+        else:
+            counter = left
+
+        if counter > result:
+            result = counter
 
     return result
-
-
 
 if __name__ == '__main__':
     import doctest
