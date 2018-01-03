@@ -34,6 +34,8 @@ def furthest(num_holes, cafes):
     Return result
     """
 
+    # NOTE: For better runtime solution; try a list of booleans
+
     holes = range(num_holes)
     result = 0
 
