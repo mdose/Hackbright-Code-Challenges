@@ -39,6 +39,35 @@ def has_balanced_parens(phrase):
             return False
     return (counter == 0)
 
+# Alternate solution to the problem from a coding interview:
+
+# def is_balanced(sequence):
+    # if sequence == "":
+    #     raise Exception("Error")
+    # open_paran = 0
+    # closed_paran = 0
+    # for char in sequence:
+    #     if char == "(":
+    #         open_paran += 1
+    #     if char ==")":
+    #         closed_paran += 1
+    #             if closed_paran > open_paran:
+    #                 return False
+    # if open_paran == closed_paran:
+    #     return True
+    # else:
+    #     return False
+    #
+    # s = ""
+    # try:
+    #     if is_balanced(s):
+    #         print "balanced"
+    #     else:
+    #         print "not balanced"
+    # except Exception:
+    #     print "Invalid input"
+
+
 
 if __name__ == '__main__':
     import doctest
