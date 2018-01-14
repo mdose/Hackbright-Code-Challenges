@@ -29,6 +29,8 @@ def  lemur(branches):
 
     jumps = 0
 
+    for branch in branches:
+
     return jumps
 
     assert branches[0] == 0, "First branch must be alive"
