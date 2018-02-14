@@ -9,6 +9,7 @@ def eval(exp):
     parsed = parse(exp)
 
     while len(parsed) > 1:
+        # Only passed 8 of 13 tests. Order of operations needs to be left to right.
         if "*" in parsed:
             i = parsed.index("*")
             l = i - 1
